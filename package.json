@@ -1,0 +1,54 @@
+{
+  "name": "Chess.com",
+  "version": "2.0.4",
+  "description": "Chess.com Desktop App",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist:win": "electron-builder --platform win32 --arch x64",
+    "dist:linux": "electron-builder -l",
+    "dev": "electron . --dev"
+  },
+  "files": [
+    "./icon.png",
+    "*.*",
+    "**/*",
+    "build/icon.*"
+  ],
+  "author": "Jairus Tanaka",
+  "license": "MIT",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.57",
+    "@electron-forge/maker-deb": "^6.0.0-beta.57",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.57",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.57",
+    "@electron-forge/maker-zip": "^6.0.0-beta.57",
+    "electron": "^15.3.0",
+    "electron-builder": "^22.13.1",
+    "electron-packager": "^15.4.0",
+    "electron-wix-msi": "^3.2.0"
+  },
+  "contributors": [
+    "John Iannandrea"
+  ],
+  "dependencies": {
+    "discord-rich-presence": "0.0.8",
+    "discord-rpc": "^4.0.1",
+    "dom-to-image": "^2.6.0",
+    "electron-preferences": "^2.2.0",
+    "electron-store": "^8.0.0",
+    "needle": "^3.0.0",
+    "path": "^0.12.7",
+    "v8-compile-cache": "^2.3.0",
+    "ws": "^8.2.3"
+  },
+  "build": {
+    "icon": "./icon.png",
+    "win": {
+      "target": [
+        {"target": "nsis", "arch": ["x64", "ia32"]}
+      ]
+    }
+  }
+}
